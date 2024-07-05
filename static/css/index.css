@@ -1,0 +1,60 @@
+
+    body {
+      width: 100%;
+      position: absolute;
+      top: 70px;
+      background: #000;
+      color: #fff;
+    }
+    .container-tool {
+      width: 100%;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+    }
+    h1 {
+        font-size: 2em;
+        padding: 20px;
+       
+    }
+    .input {
+        margin-bottom: 20px;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    button {
+        margin: 5px;
+        padding: 15px 30px;
+        border-radius: 5px;
+        font-size: 1em;
+        background: #0047AB;
+        border: none;
+        outline: none;
+        color: #fff;
+    }
+    textarea {
+      border: 1px solid #0047AB;
+        width: 100%;
+        max-width: 100%;
+        margin: 20px 0;
+        padding: 10px;
+        font-size: 1em;
+    }
+    .copied-success {
+        display: none;
+        color: green;
+        font-size: 1em;
+        margin-top: 10px;
+    }
+    
+    
+    
+    
+    
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }

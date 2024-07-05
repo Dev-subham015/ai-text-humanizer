@@ -1,0 +1,50 @@
+{% extends "humanizer/base.html" %}
+{% load static %}
+
+{% block extra_head %}
+    <title>AI Humanizer</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/index.css' %}">
+    <style>
+      @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    
+    
+    <script src='https://www.google.com/recaptcha/api.js' async defer></script>
+{% endblock %}
+
+{% block content %}
+
+<div class="container-tool">
+
+
+    <h1>AI to Human Text Converter</h1>
+    
+<div class="input">
+    <form id="text_form" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br>
+        <div>
+        <button type="submit">Convert</button>
+        <button type="button" class="paste-btn" onclick="pasteText()">Paste Text</button>
+        </div>
+    </form>
+    </div>
+    {% if output_text %}
+        <h2>Humanized Text</h2>
+        <textarea rows="10" cols="80" readonly id="output_text">{{ output_text }}</textarea>
+        <br>
+        <button class="copy-btn" onclick="copyText()">Copy to Clipboard</button>
+        <div id="copied-success" class="copied-success">Copied successfully!</div>
+        
+        
+    {% endif %}
+    {% block extra_scripts %}
+    <script src="{% static '/js/index.js' %}"></script>
+
+    {% endblock %}
+    </div>
+{% endblock %}

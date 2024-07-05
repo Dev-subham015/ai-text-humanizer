@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DevSubham</title>
+
+  <link rel="stylesheet" href="{% static '/css/base.css' %}" />
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  {% block extra_head %}
+  {% endblock %}
+</head>
+<body>
+<div class="container">
+  <nav class="navbar">
+    <div class="logo">
+      <h1><a href="/">Dev<span>Subham.</span></a></h1>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="/"><i class="fa-solid fa-home"></i> Home</a></li>
+      <li id="tools-dropdown">
+        <a href="#"><i class="fa-solid fa-tools"></i> Tools <i id="tools-icon" class="fa-solid fa-angle-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">AI Humanizer</a></li>
+          <!-- Add more tools as needed -->
+        </ul>
+      </li>
+      <li><a href="#"><i class="fa-solid fa-folder-open"></i> Projects</a></li>
+      <li><a href="{% url 'contact' %}"><i class="fa-solid fa-phone"></i> Contact</a></li>
+    </ul>
+    <div class="burger" onclick="active()">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+  </nav>
+</div>
+
+{% block content %}
+{% endblock %}
+
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>
